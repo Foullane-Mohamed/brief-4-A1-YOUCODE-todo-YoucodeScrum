@@ -29,7 +29,7 @@
         <div class="to-do">
           <div class="title-to-do">
             <h2>To do <span>(4)</span></h2>
-            <div class="card">
+            <div class="card-todo card">
               
                 <div class="icon-container">
                   <i class="fa-solid fa-question"></i>
@@ -123,7 +123,7 @@
           <div>
             <label class="text-[#fff]">Type</label>
             <div>
-              <input class=" input-feature scale-150 mr-2" type="checkbox" />
+              <input  class=" input-feature scale-150 mr-2" type="checkbox" />
               <label class="text-[#fff]">Feature</label>
             </div>
             <div>
@@ -133,7 +133,7 @@
           </div>
           <div class="flex flex-col">
             <label class="text-[#fff]">priority</label>
-            <select class="select-priority p-3 text-[1.2em] font-semibold rounded-md ">
+            <select onchange="selectedPriority(this)" class="select-priority p-3 text-[1.2em] font-semibold rounded-md ">
               <option>Low</option>
               <option>Medium</option>
               <option>High</option>
@@ -142,7 +142,7 @@
           </div>
           <div class="flex flex-col">
             <label class="text-[#fff]">Status</label>
-            <select class="p-3 text-[1.2em] font-semibold rounded-md">
+            <select class=" select-status p-3 text-[1.2em] font-semibold rounded-md">
               <option>To Do</option>
               <option>Done</option>
               <option>In Progress</option>
@@ -151,25 +151,25 @@
           <div class="flex flex-col">
             <label class="text-[#fff]">Date</label>
             <input
-              class="p-3 text-[1.2em] font-semibold rounded-md"
+              class="input-date p-3 text-[1.2em] font-semibold rounded-md"
               type="date"
             />
           </div>
 
           <div class="flex flex-col">
             <label class="text-[#fff]">Description</label>
-            <textarea class="rounded-md mb-3" id=""></textarea>
+            <textarea class="textarea-description rounded-md mb-3" id=""></textarea>
           </div>
           <div>
             <button
               type="button"
-              class="cancel-btn text-white border-none bg-[#ffffff] border border-gray-100 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#a19d9d] dark:text-white dark:border-[#727070] dark:hover:bg-[#b1acac] dark:hover:border-[#b5b2b2] dark:focus:ring-[#ada9a9]"
+              class="button-cancel cancel-btn text-white border-none bg-[#ffffff] border border-gray-100 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#a19d9d] dark:text-white dark:border-[#727070] dark:hover:bg-[#b1acac] dark:hover:border-[#b5b2b2] dark:focus:ring-[#ada9a9]"
             >
               Cancel
             </button>
             <button
               type="button"
-              class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+              class="button-save text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               Save
             </button>
