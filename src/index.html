@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li class="text-[#127589]">Home /</li>
+        <li>Scrum Board</li>
+      </ul>
+      <button class="fa-solid fa-plus btn-add-task"> Add Task</button>
+    </header>
+    <main>
+      <h1>Scrum Board</h1>
+      <div class="todo-cards">
+        <div class="to-do">
+          <div class="title-to-do">
+            <h2>To do <span>(4)</span></h2>
+            <div class="card">
+              
+                <div class="icon-container">
+                  <i class="fa-solid fa-question"></i>
+                </div>
+                <div class="content">
+                  <div class="title">Add a "Submit a Resource" form</div>
+                  <div class="details">
+                    
+                      #29916 opened 9 days ago by Wasbbok
+                  
+                  </div>
+                <div class="paragraph-card">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, molestiae?</p>
+                </div>
+                  <div class="buttons-High">
+                    <span class="High">High</span>
+                  <span class="bug">Bug</span>
+                  </div>
+                </div>
+            
+            </div>
+          </div>
+        </div>
+        <div class="in-progress">
+          <div class="title-in-progress">
+            <h2>In Progress <span>(4)</span></h2>
+            <div class="card">
+              
+              <div class="icon-container">
+                <i class="fa-solid fa-circle-notch"></i>
+              </div>
+              <div class="content">
+                <div class="title">Add a "Submit a Resource" form</div>
+                <div class="details">
+                  
+                    #29916 opened 9 days ago by Wasbbok
+                
+                </div>
+                <div class="paragraph-card">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, molestiae?</p>
+                </div>
+                <div class="buttons-High">
+                  <span class="High">High</span>
+                <span class="bug">Bug</span>
+                </div>
+              </div>
+          
+          </div>
+          </div>
+        </div>
+        <div class="done">
+          <div class="title-done">
+            <h2>Done <span>(4)</span></h2>
+            <div class="card">
+              
+              <div class="icon-container">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div class="content">
+                <div class="title">Add a "Submit a Resource" form</div>
+                <div class="details">
+                  
+                    #29916 opened 9 days ago by Wasbbok
+                
+                </div>
+                <div class="paragraph-card">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, molestiae?</p>
+                </div>
+                <div class="buttons-High">
+                  <span class="High">High</span>
+                <span class="bug">Bug</span>
+                </div>
+              </div>
+          
+          </div>
+          </div>
+        </div>
+      </div>
+    
+      <section
+        style="transform: translate(-50%, -50%)"
+        class="model addTask absolute top-[50%] left-[50%] rounded-3xl bg-[#6d6767ce] py-[25px] px-[50px] flex flex-col w-[40%] section-popup"
+      >
+        <h2 class="text-4xl font-bold text-[#fff]">Add Task</h2>
+        <hr />
+        <form>
+          <div class="flex flex-col text-2xl">
+            <label class="text-[#fff] ">title</label>
+            <input type="input-title text" class="px-3 py-2 mb-3 rounded-md" />
+          </div>
+          <div>
+            <label class="text-[#fff]">Type</label>
+            <div>
+              <input class=" input-feature scale-150 mr-2" type="checkbox" />
+              <label class="text-[#fff]">Feature</label>
+            </div>
+            <div>
+              <input class="input-Bug scale-150 mr-2" type="checkbox" />
+              <label class="text-[#fff]">Bug</label>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <label class="text-[#fff]">priority</label>
+            <select class="select-priority p-3 text-[1.2em] font-semibold rounded-md ">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label class="text-[#fff]">Status</label>
+            <select class="p-3 text-[1.2em] font-semibold rounded-md">
+              <option>To Do</option>
+              <option>Done</option>
+              <option>In Progress</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label class="text-[#fff]">Date</label>
+            <input
+              class="p-3 text-[1.2em] font-semibold rounded-md"
+              type="date"
+            />
+          </div>
+
+          <div class="flex flex-col">
+            <label class="text-[#fff]">Description</label>
+            <textarea class="rounded-md mb-3" id=""></textarea>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="cancel-btn text-white border-none bg-[#ffffff] border border-gray-100 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#a19d9d] dark:text-white dark:border-[#727070] dark:hover:bg-[#b1acac] dark:hover:border-[#b5b2b2] dark:focus:ring-[#ada9a9]"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer></footer>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

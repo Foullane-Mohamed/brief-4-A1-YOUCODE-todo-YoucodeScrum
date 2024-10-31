@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "watch" : "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "tailwindcss": "^3.4.14"
   }
 }

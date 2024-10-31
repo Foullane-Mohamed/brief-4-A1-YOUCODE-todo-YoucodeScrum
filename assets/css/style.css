@@ -1,10 +1,187 @@
-.pace {
-    display: none;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+
+  margin: 0;
+  padding: 0;
+background-color: url(../img/bgRep.avif);
+}
+header {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: 300;
+    li {
+      text-decoration: none;
+      list-style: none;
+    }
+  }
+  button {
+    border: none;
+    padding: 7px 20px 7px 20px;
+    color: white;
+    background-color: #00acac;
+    border-radius: 20px;
+
+    i {
+      color: black;
+      margin-right: 10px;
+    }
+  }
+}
+main {
+  width: 80%;
+  margin: auto;
+  h1 {
+    font-size: 26px;
+    font-weight: 400;
+  }
+}
+.todo-cards {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 30px;
+
+  .to-do {
+    .title-to-do {
+      background-color: rgba(62, 58, 58, 0.601);
+      color: white;
+
+      height: 40px;
+      border-radius: 10px;
+
+      h2 {
+        font-size: 24px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .in-progress {
+    .title-in-progress {
+      background-color: rgba(62, 58, 58, 0.601);
+      color: white;
+
+      height: 40px;
+      border-radius: 10px;
+
+      h2 {
+        font-size: 24px;
+        margin-left: 20px;
+      }
+    }
+  }
+  .done {
+    .title-done {
+      background-color: rgba(62, 58, 58, 0.601);
+      color: white;
+
+      height: 40px;
+      border-radius: 10px;
+
+      h2 {
+        font-size: 24px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+.card {
+  margin-top: 20px;
+  border: solid 2px rgba(128, 128, 128, 0.15);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.card:hover {
+  background-color: rgb(235, 237, 236);
+}
+.paragraph-card p{
+color: rgba(0, 0, 0, 0.819);
+font-size: 14px;
+font-weight: 200;
+padding-top: 6px;
+padding-bottom: 6px;
+}
+.icon-container {
+  margin-right: 15px;
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  border: solid 3px #34ac83;
+  border-radius: 50%;
+  color: #34ac83;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
-.main-style {
-    min-height: 100vh;
-    background: url(../img/cover/cover-scrum-board.png) no-repeat fixed;
-    background-size: 360px;
-    background-position: right bottom;
+.content {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 10px;
 }
+
+.title {
+  font-size: 1.2em;
+  line-height: 12px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: #343a40;
+}
+
+.details {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.High {
+  background-color: #348fe2;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.bug {
+  background-color: #dee2e6;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 10px;
+  color: black;
+}
+
+form label {
+  font-size: 1.2em;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+form input {
+  font-size: 1.2em;
+}
+  .section-popup {
+    display: none;
+  }
