@@ -31,90 +31,24 @@
           <div class="title-to-do">
             <h2>To do <span>(0)</span></h2>
           </div>  
-          <!-- <div class="card-todo card">
-            <div class="icon-container">
-              <i class="fa-solid fa-question"></i>
-            </div>
-            <div class="content">
-              <div class="title">Add a "Submit a Resource" form</div>
-              <div class="details">#29916 opened 9 days ago by Wasbbok</div>
-              <div class="paragraph-card">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Itaque, molestiae?
-                </p>
-              </div>
-              <div class="buttons-High">
-                <span class="High">Feature</span>
-                <span class="bug">Bug</span>
-                <span class="low s-btn">Low</span>
-                <span class="Medium s-btn">Medium</span>
-                <span class="high s-btn">High</span>
-                <span class="critical s-btn">Critical</span>
-              </div>
-            </div>
-          </div> -->
+        
         </div>
         <div class="in-progress cards-3">
           <div class="title-in-progress countainer-card">
             <h2>In Progress <span>(4)</span></h2>
           </div>
-          <!-- <div class="card-todo card">
-            <div class="icon-container">
-              <i class="fa-solid fa-question"></i>
-            </div>
-            <div class="content">
-              <div class="title">Add a "Submit a Resource" form</div>
-              <div class="details">#29916 opened 9 days ago by Wasbbok</div>
-              <div class="paragraph-card">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Itaque, molestiae?
-                </p>
-              </div>
-              <div class="buttons-High">
-                <span class="High">Feature</span>
-                <span class="bug">Bug</span>
-                <span class="low s-btn">Low</span>
-                <span class="Medium s-btn">Medium</span>
-                <span class="high s-btn">High</span>
-                <span class="critical s-btn">Critical</span>
-              </div>
-            </div>
-          </div> -->
+          
         </div>
         <div class="done cards-3">
           <div class="title-done">
-            <h2>Done <span>(4)</span></h2>
+            <h2>Done <span>(0)</span></h2>
           </div>
-          <div class="card-todo card">
-            <div class="icon-container">
-              <i class="fa-solid fa-question"></i>
-            </div>
-            <div class="content">
-              <div class="title">Add a "Submit a Resource" form</div>
-              <div class="details">#29916 opened 9 days ago by Wasbbok</div>
-              <div class="paragraph-card">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Itaque, molestiae?
-                </p>
-              </div>
-              <div class="buttons-High">
-                <span class="High">Feature</span>
-                <span class="bug">Bug</span>
-                <span class="low s-btn">Low</span>
-                <span class="Medium s-btn">Medium</span>
-                <span class="high s-btn">High</span>
-                <span class="critical s-btn">Critical</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
       <section
-        style="transform: translate(-50%, -50%)"
+        style="transform: translate(-50%, -50%); display: none;"
         class="model addTask absolute top-[50%] left-[50%] rounded-3xl bg-[#6d6767ce] py-[25px] px-[50px] flex flex-col w-[40%] section-popup"
       >
         <h2 class="text-4xl font-bold text-[#fff]">Add Task</h2>
@@ -177,6 +111,7 @@
               Cancel
             </button>
             <button
+             onclick="editTask()"
               type="button"
               class="btn-edit-task text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 button-update"
             >
