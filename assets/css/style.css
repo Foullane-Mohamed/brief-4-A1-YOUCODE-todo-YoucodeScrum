@@ -118,6 +118,7 @@ main {
 .icon-container {
   margin-right: 15px;
   font-size: 20px;
+  padding: 3px;
 
   text-align: center;
   border: solid 3px #34ac83;
@@ -126,6 +127,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .content {
@@ -183,12 +185,12 @@ form input {
 }
 .card {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: start;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
-  gap: 12px;
+  gap: 15px;
 }
 /* .cards-3{
   margin: 20px;
@@ -199,6 +201,7 @@ form input {
     display: grid;
     grid-template-columns: auto;
   }
+
 }
 
 .s-btn {

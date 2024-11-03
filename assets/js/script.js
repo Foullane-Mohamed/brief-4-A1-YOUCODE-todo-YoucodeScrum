@@ -12,8 +12,8 @@ let textareaDescription = document.querySelector(".textarea-description");
 let buttonSave = document.querySelector(".button-save");
 let buttonCancel = document.querySelector(".button-cancel");
 let todoCards = document.querySelector(".to-do");
-let inProgress = document.querySelector(".in-progress")
-let doneTods = document.querySelector(".done.cards-3")
+let inProgress = document.querySelector(".in-progress");
+let doneTods = document.querySelector(".done.cards-3");
 let sectionPopup = document.querySelector(".section-popup");
 let btnEditAndRemove = document.querySelector(".btn-edit-remove");
 let btnAddAndCancel = document.querySelector(".btn-save-cancel");
@@ -27,16 +27,15 @@ cancelBtn2?.addEventListener("click", () => {
 
 inputFeature.addEventListener("click", () => {
   if (inputFeature.checked) {
-    inputBug.checked = false
-    checked = "Feature"
+    inputBug.checked = false;
+    checked = "Feature";
   }
 });
 
 inputBug.addEventListener("click", () => {
   if (inputBug.checked) {
-    
     inputFeature.checked = false;
-    checked = "Bug"
+    checked = "Bug";
   }
 });
 
@@ -54,7 +53,6 @@ cancelBtn.addEventListener("click", () => {
 
 let todoObjet = {};
 
-
 buttonSave.addEventListener("click", () => {
   todoObjet = {
     title: inputTitle.value,
@@ -67,34 +65,35 @@ buttonSave.addEventListener("click", () => {
   todoTasks.push(todoObjet);
   readTodo();
   addTask.style.display = "none";
-  localStorage.setItem("allTodos", JSON.stringify(todoTasks))
+  localStorage.setItem("allTodos", JSON.stringify(todoTasks));
 });
 
-
 function readTodo() {
+  let todoCounter = todoTasks.filter(task => task.status === "To Do").length;
+let inProgressCounter = todoTasks.filter(task => task.status === "In Progress").length;
+let doneCounter = todoTasks.filter(task => task.status === "Done").length;
   todoCards.innerHTML = `
   <div class="to-do">
           <div class="title-to-do">
-            <h2>To do <span>(0)</span></h2>
+            <h2>To do <span>(${todoCounter})</span></h2>
           </div>
-  `
+  `;
 
   inProgress.innerHTML = `
   <div class="to-do in-progress">
           <div class="title-to-do">
-            <h2>In Progress  <span>(0)</span></h2>
+            <h2>In Progress  <span>(${inProgressCounter})</span></h2>
           </div>
-  `
+  `;
 
-  doneTods.innerHTML =  `
+  doneTods.innerHTML = `
     <div class="title-done">
-            <h2>Done <span>(0)</span></h2>
+            <h2>Done <span>(${doneCounter})</span></h2>
           </div>
-  `
+  `;
   for (let i = 0; i < todoTasks.length; i++) {
-  
     if (todoTasks[i].status == "To Do") {
-      todoCards.innerHTML  += `
+      todoCards.innerHTML += `
       <div onclick="fillInputs(${i})" class="card-todo card">
       <div class="icon-container">
       <i class="fa-solid fa-question"></i>
@@ -106,21 +105,33 @@ function readTodo() {
       <p>${todoTasks[i].description}</p>
       </div>
       <div class="buttons-High">
-      <span class="High ${"Feature"== todoTasks[i].type?"":"hide"} ">Feature</span>
-      <span class="bug ${"Bug" == todoTasks[i].type?"":"hide"} ">Bug</span>
-      <span  class="low s-btn ${"Low" == todoTasks[i].priority ? 'show-priority':""}">Low</span>
-      <span  class="Medium s-btn ${'Medium' == todoTasks[i].priority ? 'show-priority':""}">Medium</span>
-      <span  class="high s-btn ${'High' == todoTasks[i].priority ? 'show-priority':""}">High</span>
-      <span  class="critical s-btn ${'Critical' == todoTasks[i].priority ? 'show-priority':""}">Critical</span>    
+      <span class="High ${
+        "Feature" == todoTasks[i].type ? "" : "hide"
+      } ">Feature</span>
+      <span class="bug ${"Bug" == todoTasks[i].type ? "" : "hide"} ">Bug</span>
+      <span  class="low s-btn ${
+        "Low" == todoTasks[i].priority ? "show-priority" : ""
+      }">Low</span>
+      <span  class="Medium s-btn ${
+        "Medium" == todoTasks[i].priority ? "show-priority" : ""
+      }">Medium</span>
+      <span  class="high s-btn ${
+        "High" == todoTasks[i].priority ? "show-priority" : ""
+      }">High</span>
+      <span  class="critical s-btn ${
+        "Critical" == todoTasks[i].priority ? "show-priority" : ""
+      }">Critical</span>    
       </div>
       </div>
       </div>
+    
       `;
-    }else if (todoTasks[i].status == "In Progress") {
-      inProgress.innerHTML  += `
+    } else if (todoTasks[i].status == "In Progress") {
+      inProgress.innerHTML += `
       <div  onclick="fillInputs(${i})" class="card-todo card">
       <div class="icon-container">
-      <i class="fa-solid fa-question"></i>
+  
+      <i class="fa-solid fa-circle-notch"></i>
       </div>
       <div class="content">
       <div class="title"> ${todoTasks[i].title}</div>
@@ -129,21 +140,32 @@ function readTodo() {
       <p>${todoTasks[i].description}</p>
       </div>
       <div class="buttons-High">
-      <span class="High ${"Feature"== todoTasks[i].type?"":"hide"} ">Feature</span>
-      <span class="bug ${"Bug" == todoTasks[i].type?"":"hide"} ">Bug</span>
-      <span  class="low s-btn ${"Low" == todoTasks[i].priority ? 'show-priority':""}">Low</span>
-      <span  class="Medium s-btn ${'Medium' == todoTasks[i].priority ? 'show-priority':""}">Medium</span>
-      <span  class="high s-btn ${'High' == todoTasks[i].priority ? 'show-priority':""}">High</span>
-      <span  class="critical s-btn ${'Critical' == todoTasks[i].priority ? 'show-priority':""}">Critical</span>    
+      <span class="High ${
+        "Feature" == todoTasks[i].type ? "" : "hide"
+      } ">Feature</span>
+      <span class="bug ${"Bug" == todoTasks[i].type ? "" : "hide"} ">Bug</span>
+      <span  class="low s-btn ${
+        "Low" == todoTasks[i].priority ? "show-priority" : ""
+      }">Low</span>
+      <span  class="Medium s-btn ${
+        "Medium" == todoTasks[i].priority ? "show-priority" : ""
+      }">Medium</span>
+      <span  class="high s-btn ${
+        "High" == todoTasks[i].priority ? "show-priority" : ""
+      }">High</span>
+      <span  class="critical s-btn ${
+        "Critical" == todoTasks[i].priority ? "show-priority" : ""
+      }">Critical</span>    
       </div>
       </div>
       </div>
+    
       `;
-    }else if(todoTasks[i].status == "Done"){
-      doneTods.innerHTML  += `
+    } else if (todoTasks[i].status == "Done") {
+      doneTods.innerHTML += `
       <div  onclick="fillInputs(${i})" class="card-todo card">
       <div class="icon-container">
-      <i class="fa-solid fa-question"></i>
+      <i class="fa-solid fa-check"></i>
       </div>
       <div class="content">
       <div class="title"> ${todoTasks[i].title}</div>
@@ -152,40 +174,46 @@ function readTodo() {
       <p>${todoTasks[i].description}</p>
       </div>
       <div class="buttons-High">
-      <span class="High ${"Feature"== todoTasks[i].type?"":"hide"} ">Feature</span>
-      <span class="bug ${"Bug" == todoTasks[i].type?"":"hide"} ">Bug</span>
-      <span  class="low s-btn ${"Low" == todoTasks[i].priority ? 'show-priority':""}">Low</span>
-      <span  class="Medium s-btn ${'Medium' == todoTasks[i].priority ? 'show-priority':""}">Medium</span>
-      <span  class="high s-btn ${'High' == todoTasks[i].priority ? 'show-priority':""}">High</span>
-      <span  class="critical s-btn ${'Critical' == todoTasks[i].priority ? 'show-priority':""}">Critical</span>    
+      <span class="High ${
+        "Feature" == todoTasks[i].type ? "" : "hide"
+      } ">Feature</span>
+      <span class="bug ${"Bug" == todoTasks[i].type ? "" : "hide"} ">Bug</span>
+      <span  class="low s-btn ${
+        "Low" == todoTasks[i].priority ? "show-priority" : ""
+      }">Low</span>
+      <span  class="Medium s-btn ${
+        "Medium" == todoTasks[i].priority ? "show-priority" : ""
+      }">Medium</span>
+      <span  class="high s-btn ${
+        "High" == todoTasks[i].priority ? "show-priority" : ""
+      }">High</span>
+      <span  class="critical s-btn ${
+        "Critical" == todoTasks[i].priority ? "show-priority" : ""
+      }">Critical</span>    
       </div>
       </div>
       </div>
+  
       `;
-
     }
   }
 }
 
-readTodo()
+readTodo();
 function showForm() {
   addTask.style.display = "block";
   btnEditAndRemove.style.display = "block";
   btnAddAndCancel.style.display = "none";
-  
 }
 
-
 function fillInputs(index) {
-  
   inputTitle.value = todoTasks[index].title;
-  if (todoTasks[index].type == "Bug" ) {
-    inputBug.checked = true
-    inProgress.checked = false
-  }else{
-
-    inputBug.checked = true 
-     inProgress.checked = false
+  if (todoTasks[index].type == "Bug") {
+    inputBug.checked = true;
+    inProgress.checked = false;
+  } else {
+    inputBug.checked = true;
+    inProgress.checked = false;
   }
 
   selectPriority.value = todoTasks[index].priority;
@@ -193,9 +221,8 @@ function fillInputs(index) {
   inputDate.value = todoTasks[index].date;
   textareaDescription.value = todoTasks[index].description;
   slectedTaskIndex = index;
-  
-  showForm()
 
+  showForm();
 }
 
 function cleanForm() {
@@ -208,33 +235,25 @@ function cleanForm() {
 }
 
 function editTask() {
-    objtodo = {
+  objtodo = {
     title: inputTitle.value,
-    type: checked ,
+    type: checked,
     priority: selectPriority.value,
     status: selectStatus.value,
     date: inputDate.value,
     description: textareaDescription.value,
   };
-  
 
-    todoTasks[slectedTaskIndex] = objtodo
-    readTodo();
-
-  
+  todoTasks[slectedTaskIndex] = objtodo;
+  readTodo();
 
   addTask.style.display = "none";
-  localStorage.setItem("allTodos", JSON.stringify(todoTasks))
-
-};
+  localStorage.setItem("allTodos", JSON.stringify(todoTasks));
+}
 
 btnDelet.addEventListener("click", () => {
-  
-    todoTasks.splice(slectedTaskIndex, 1);
-    readTodo();
+  todoTasks.splice(slectedTaskIndex, 1);
+  readTodo();
   addTask.style.display = "none";
-  localStorage.setItem("allTodos", JSON.stringify(todoTasks))
-
+  localStorage.setItem("allTodos", JSON.stringify(todoTasks));
 });
-
-
